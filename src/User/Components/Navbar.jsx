@@ -1,9 +1,9 @@
 import React from 'react'
 import logo from "../../assets/logo.png"
-import Drawer from "./Drawer"
+import Drawer from "./UI/Drawer"
 import { Menu, X} from 'lucide-react';
 import {Link} from "react-router-dom"
-import GalleryDropdown from "../Components/Dropdown"
+import GalleryDropdown from "./UI/Dropdown"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -17,13 +17,22 @@ const Navbar = () => {
               <span className="ml-2 text-xl font-bold text-green-800">GaganPharma</span>
             </div>
             </Link>
-            
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               <Link to="/products"><a className="text-gray-600 hover:text-green-600">Products</a></Link>
              <Link to="/manufacturing">
              <a className="text-gray-600 hover:text-green-600">Manufacturing</a>
              </Link>
+              <a className="text-gray-600 group relative">
+                <li className="list-none">Company</li>
+                <div className="content hidden p-4 space-y-2 group-hover:block list-none bg-white left-0 rounded-md shadow-sm  w-[18rem] absolute">
+                  <li className="list-none">CERTIFICATES</li>
+                  <li className="list-none">DIRECTORS DESK</li>
+                  <li className="list-none">MANUFACTURING UNIT</li>
+                  <li className="list-none">QUALITY CONTROL</li>
+                  <li className="list-none">RESEARCH & DEVELOPMENT</li>
+                </div>
+              </a>
               <Link to="/about">
               <a className="text-gray-600 hover:text-green-600">About Us</a>
               </Link>
@@ -33,7 +42,6 @@ const Navbar = () => {
                 <Drawer text="Get Quote"/>
               </button>
             </div>
-
             {/* Mobile menu button */}
             <div className="md:hidden">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -42,7 +50,6 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
@@ -52,8 +59,6 @@ const Navbar = () => {
               <a className="block px-3 py-2 text-gray-600">About Us</a>
               <a className="block px-3 py-2 text-gray-600">Contact</a>
               <a className="block px-3 py-2 text-gray-600">Gallery</a>
-              
-
             </div>
           </div>
         )}

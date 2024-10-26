@@ -1,5 +1,5 @@
 import React from 'react'
-import {CustomDropdown} from '../Components/QuoteForm'
+import {CustomDropdown} from '../Components/UI/QuoteForm'
 import { Divider } from 'antd'
 
 const ContactUs = () => {

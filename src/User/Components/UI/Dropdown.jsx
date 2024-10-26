@@ -12,7 +12,7 @@ const items = [
   {
     key: '2',
     label: (
-      <li className="">Vedios</li>
+      <li className="">Video</li>
     ),
   },
 ];
@@ -29,35 +29,6 @@ const DropdownGallery = ({text}) => (
         <button>Gallery</button>
       </Dropdown>
     </Space>
-    {/* <Space wrap>
-      <Dropdown
-        menu={{
-          items,
-        }}
-        placement="topLeft"
-        arrow
-      >
-        <Button>topLeft</Button>
-      </Dropdown>
-      <Dropdown
-        menu={{
-          items,
-        }}
-        placement="top"
-        arrow
-      >
-        <Button>top</Button>
-      </Dropdown>
-      <Dropdown
-        menu={{
-          items,
-        }}
-        placement="topRight"
-        arrow
-      >
-        <Button>topRight</Button>
-      </Dropdown>
-    </Space> */}
   </Space>
 );
 export default DropdownGallery;
