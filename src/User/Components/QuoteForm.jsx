@@ -1,151 +1,99 @@
-import React, { useState } from 'react';
-import { PlusOutlined } from '@ant-design/icons';
-import {
-  Button,
-  Cascader,
-  Checkbox,
-  ColorPicker,
-  DatePicker,
-  Form,
-  Input,
-  InputNumber,
-  Radio,
-  Rate,
-  Select,
-  Slider,
-  Switch,
-  TreeSelect,
-  Upload,
-} from 'antd';
-const { RangePicker } = DatePicker;
-const { TextArea } = Input;
-const normFile = (e) => {
-  if (Array.isArray(e)) {
-    return e;
-  }
-  return e?.fileList;
-};
-const FormDisabledDemo = () => {
-  const [componentDisabled, setComponentDisabled] = useState(false);
+import React, { useState } from "react";
+
+const QuoteForm = () => {
+  const [selected, setSelected] = useState(false);
+  const handleSelected = (item) => {
+    setSelected(item);
+  };
   return (
     <>
-      <Checkbox
-        checked={componentDisabled}
-        onChange={(e) => setComponentDisabled(e.target.checked)}
-      >
-        Form disabled
-      </Checkbox>
-      <Form
-        labelCol={{
-          span: 4,
-        }}
-        wrapperCol={{
-          span: 14,
-        }}
-        layout="horizontal"
-        disabled={componentDisabled}
-        style={{
-          maxWidth: 600,
-        }}
-      >
-        <Form.Item label="Checkbox" name="disabled" valuePropName="checked">
-          <Checkbox>Checkbox</Checkbox>
-        </Form.Item>
-        <Form.Item label="Radio">
-          <Radio.Group>
-            <Radio value="apple"> Apple </Radio>
-            <Radio value="pear"> Pear </Radio>
-          </Radio.Group>
-        </Form.Item>
-        <Form.Item label="Input">
-          <Input />
-        </Form.Item>
-        <Form.Item label="Select">
-          <Select>
-            <Select.Option value="demo">Demo</Select.Option>
-          </Select>
-        </Form.Item>
-        <Form.Item label="TreeSelect">
-          <TreeSelect
-            treeData={[
-              {
-                title: 'Light',
-                value: 'light',
-                children: [
-                  {
-                    title: 'Bamboo',
-                    value: 'bamboo',
-                  },
-                ],
-              },
-            ]}
-          />
-        </Form.Item>
-        <Form.Item label="Cascader">
-          <Cascader
-            options={[
-              {
-                value: 'zhejiang',
-                label: 'Zhejiang',
-                children: [
-                  {
-                    value: 'hangzhou',
-                    label: 'Hangzhou',
-                  },
-                ],
-              },
-            ]}
-          />
-        </Form.Item>
-        <Form.Item label="DatePicker">
-          <DatePicker />
-        </Form.Item>
-        <Form.Item label="RangePicker">
-          <RangePicker />
-        </Form.Item>
-        <Form.Item label="InputNumber">
-          <InputNumber />
-        </Form.Item>
-        <Form.Item label="TextArea">
-          <TextArea rows={4} />
-        </Form.Item>
-        <Form.Item label="Switch" valuePropName="checked">
-          <Switch />
-        </Form.Item>
-        <Form.Item label="Upload" valuePropName="fileList" getValueFromEvent={normFile}>
-          <Upload action="/upload.do" listType="picture-card">
-            <button
-              style={{
-                border: 0,
-                background: 'none',
-              }}
-              type="button"
-            >
-              <PlusOutlined />
+      <div className="">
+        <div className="prouct-category flex flex-col m-4 gap-2 ">
+          <h1 className="">Product Category:</h1>
+          <div className="flex gap-2 items-center">
+            {["Herbal", "Cosmetics", "FMCG"].map((item, i) => (
               <div
-                style={{
-                  marginTop: 8,
-                }}
+                onClick={() => handleSelected(item)}
+                className={
+                  selected === item
+                    ? "bg-green-800 text-white w-full rounded-sm text-center cursor-pointer  duration-300 shadow-sm"
+                    : "border w-full rounded-sm text-center border-green-800 cursor-pointer"
+                }
+                key={i}
               >
-                Upload
+                <li className="list-none">{item}</li>
               </div>
-            </button>
-          </Upload>
-        </Form.Item>
-        <Form.Item label="Button">
-          <Button>Button</Button>
-        </Form.Item>
-        <Form.Item label="Slider">
-          <Slider />
-        </Form.Item>
-        <Form.Item label="ColorPicker">
-          <ColorPicker />
-        </Form.Item>
-        <Form.Item label="Rate">
-          <Rate />
-        </Form.Item>
-      </Form>
+            ))}
+          </div>
+        </div>
+        <div className="form-container overflow-y-auto">
+          <form className="p-4 space-y-4">
+            <div className="flex flex-col gap-1">
+              <label htmlFor="name">Your Name</label>
+              <input
+                type="text"
+                className="w-full border h-9 border-gray-300 outline-none rounded-md px-2 placeholder:px-2"
+                id="name"
+                placeholder="enter your name"
+              />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label htmlFor="name">Your Email</label>
+              <input
+                type="text"
+                className="w-full border h-9 border-gray-300 outline-none rounded-md px-2 placeholder:px-2"
+                id="name"
+                placeholder="enter your name"
+              />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label htmlFor="name">Your Contact</label>
+              <input
+                type="text"
+                className="w-full border h-9 border-gray-300 outline-none rounded-md px-2 placeholder:px-2"
+                id="name"
+                placeholder="enter your name"
+              />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label htmlFor="name">Company Name</label>
+              <input
+                type="text"
+                className="w-full border h-9 border-gray-300 outline-none rounded-md px-2 placeholder:px-2"
+                id="name"
+                placeholder="enter your name"
+              />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label htmlFor="name">Product Name</label>
+              <input
+                type="text"
+                className="w-full border h-9 border-gray-300 outline-none rounded-md px-2 placeholder:px-2"
+                id="name"
+                placeholder="enter your name"
+              />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label htmlFor="name">Minimum Quantity (Pcs)</label>
+              <input
+                type="text"
+                className="w-full border h-9 border-gray-300 outline-none rounded-md px-2 placeholder:px-2"
+                id="name"
+                placeholder="enter your name"
+              />
+            </div>
+            <div className="textarea flex flex-col">
+              <label htmlFor="textarea">Yor Message</label>
+                <textarea placeholder="enter your query" rows="4" className="border rounded-sm border-green-800"></textarea>
+            </div>
+           <button type="submit" className="px-6 py-2 bg-green-800 hover:bg-green-700 duration-300 text-white">
+            Submit Form
+           </button>
+          </form>
+        </div>
+      </div>
     </>
   );
 };
-export default () => <FormDisabledDemo />;
+
+export default QuoteForm;
