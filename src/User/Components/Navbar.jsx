@@ -3,6 +3,8 @@ import logo from "../../assets/logo.png"
 import Drawer from "./Drawer"
 import { Menu, X} from 'lucide-react';
 import {Link} from "react-router-dom"
+import GalleryDropdown from "../Components/Dropdown"
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
@@ -25,8 +27,8 @@ const Navbar = () => {
               <Link to="/about">
               <a className="text-gray-600 hover:text-green-600">About Us</a>
               </Link>
-              <a className="text-gray-600 hover:text-green-600">Contact</a>
-              <a className="text-gray-600 hover:text-green-600">Gallery</a>
+              <Link to="/contactus"><a className="text-gray-600 hover:text-green-600">Contact</a></Link>
+              <GalleryDropdown />
               <button className="bg-green-800 text-white px-4 py-2 rounded-md hover:bg-green-700">
                 <Drawer text="Get Quote"/>
               </button>

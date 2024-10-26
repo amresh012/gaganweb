@@ -1,11 +1,9 @@
 import React from 'react';
-import { Menu, X, ChevronRight, Beaker, Building2, Award, Search, Phone} from 'lucide-react';
-import {Link} from "react-router-dom"
+import {ChevronRight, Beaker, Building2, Award, Search, Phone} from 'lucide-react';
 import Capsule from "../assets/capsules.png"
 import Syrup from "../assets/syrup.png"
 import Whey from "../assets/whey.png"
 import Marquee from "react-fast-marquee"
-import logo from "../assets/logo.png"
 import {C1,
   C2,
   C3,
@@ -13,7 +11,6 @@ import {C1,
   C5,
 } from "../assets/index"
 import CountUp from 'react-countup';
-import Drawer from "./Components/Drawer"
 import { TypeAnimation } from 'react-type-animation';
 
   const ClientImages =  [C1,C2,C3,C4,C5]
@@ -72,7 +69,7 @@ const PharmaWebsite = () => {
             </p>
             <div className="mt-12 flex md:flex-row sm:flex-col gap-2 max-w-full justify-center items-center">
               <button className='font-semibold text-white Capitalize bg-green-800 p-2 rounded-md shadow-md '>Explore Products</button>
-              <button className='font-semibold break-words  p-2 '>Manufacturing Services</button>
+              <button className='font-semibold break-words underline p-2 '>Manufacturing Services</button>
             </div>
           </div>
         </div>

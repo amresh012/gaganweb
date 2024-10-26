@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from 'react';
+import { PlusOutlined } from '@ant-design/icons';
+import { Button, Divider, Input, Select, Space } from 'antd';
+let index = 0;
 
 const QuoteForm = () => {
   const [selected, setSelected] = useState(false);
@@ -40,38 +43,39 @@ const QuoteForm = () => {
             <div className="flex flex-col gap-1">
               <label htmlFor="name">Your Email</label>
               <input
-                type="text"
+                type="email"
                 className="w-full border h-9 border-gray-300 outline-none rounded-md px-2 placeholder:px-2"
                 id="name"
-                placeholder="enter your name"
+                placeholder="enter your email"
               />
             </div>
             <div className="flex flex-col gap-1">
-              <label htmlFor="name">Your Contact</label>
+              <label htmlFor="contact">Your Contact</label>
+              <input
+                type="number"
+                className="w-full border h-9 border-gray-300 outline-none rounded-md px-2 placeholder:px-2"
+                id="name"
+                placeholder="enter your contact"
+              />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label htmlFor="company name">Company Name</label>
               <input
                 type="text"
                 className="w-full border h-9 border-gray-300 outline-none rounded-md px-2 placeholder:px-2"
                 id="name"
-                placeholder="enter your name"
+                placeholder="enter your company name"
               />
             </div>
             <div className="flex flex-col gap-1">
-              <label htmlFor="name">Company Name</label>
-              <input
+              <label htmlFor="product name">Product Name</label>
+              {/* <input
                 type="text"
                 className="w-full border h-9 border-gray-300 outline-none rounded-md px-2 placeholder:px-2"
                 id="name"
                 placeholder="enter your name"
-              />
-            </div>
-            <div className="flex flex-col gap-1">
-              <label htmlFor="name">Product Name</label>
-              <input
-                type="text"
-                className="w-full border h-9 border-gray-300 outline-none rounded-md px-2 placeholder:px-2"
-                id="name"
-                placeholder="enter your name"
-              />
+              /> */}
+              <CustomDropdown/>
             </div>
             <div className="flex flex-col gap-1">
               <label htmlFor="name">Minimum Quantity (Pcs)</label>
@@ -97,3 +101,62 @@ const QuoteForm = () => {
 };
 
 export default QuoteForm;
+
+
+
+
+
+export const CustomDropdown = () => {
+  const [items, setItems] = useState([]);
+  const [name, setName] = useState('');
+  const inputRef = useRef(null);
+  const onNameChange = (event) => {
+    setName(event.target.value);
+  };
+  const addItem = (e) => {
+    e.preventDefault();
+    setItems([...items, name || `New item ${index++}`]);
+    setName('');
+    setTimeout(() => {
+      inputRef.current?.focus();
+    }, 0);
+  };
+  return (
+    <Select
+      style={{
+        width: 290,
+      }}
+      placeholder="custom dropdown render"
+      dropdownRender={(menu) => (
+        <>
+          {menu}
+          <Divider
+            style={{
+              margin: '0px 0',
+            }}
+          />
+          <Space
+            style={{
+              padding: '0 8px 4px',
+            }}
+          >
+            <Input
+              placeholder="Please enter item"
+              ref={inputRef}
+              value={name}
+              onChange={onNameChange}
+              onKeyDown={(e) => e.stopPropagation()}
+            />
+            <Button type="text" icon={<PlusOutlined />} onClick={addItem}>
+              Add item
+            </Button>
+          </Space>
+        </>
+      )}
+      options={items.map((item) => ({
+        label: item,
+        value: item,
+      }))}
+    />
+  );
+};
