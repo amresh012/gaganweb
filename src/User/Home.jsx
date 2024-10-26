@@ -53,7 +53,7 @@ const PharmaWebsite = () => {
         1000, // wait 1s before replacing "Mice" with "Hamsters"
         'Research and Development',
         1000,
-        'Contract Manufacturing',
+        'Third Party Manufacturing',
         1000
        
       ]}
@@ -101,13 +101,13 @@ const PharmaWebsite = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 ">
             <div className="bg-white p-6 min-h-44 rounded-lg shadow-lg text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2"><CountUp start={0}
-  end={30}
+  end={10}
   duration={5} />+</div>
               <div className="text-gray-600">Years of Excellence</div>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2"><CountUp start={0}
-  end={1000}
+  end={200}
   duration={5} />+</div>
               <div className="text-gray-600">Employees</div>
             </div>
@@ -115,7 +115,7 @@ const PharmaWebsite = () => {
               <div className="text-3xl font-bold text-blue-600 mb-2"><CountUp start={0}
   end={50}
   duration={5} />+</div>
-              <div className="text-gray-600">Countries Served</div>
+              <div className="text-gray-600">Customers Served Daily</div>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2"><CountUp start={0}
@@ -130,11 +130,6 @@ const PharmaWebsite = () => {
       </div>
      </div>
       {/* {Abou us end} */}
-
-
-
-
-
 
 
       {/* Features Section */}
@@ -208,16 +203,19 @@ const PharmaWebsite = () => {
       </div>
 
       {/* product category */}
-      <div className="bg-gray-100 h-[100vh]  mt-12 p-4">
-        <div className="">
+      <div className="bg-gray-100 mt-12 p-4">
+        <div className="flex flex-col gap-12 items-center justify-around">
           <div className="header">
             <h1 className='text-3xl font-bold text-gray-900 text-center'>Exclusive Product Range</h1>
             <p className="mt-4 text-gray-600 text-center">Explore our extensive catalog of pharmaceutical products</p>
           </div>
-          <div className="product-range-body">
+          <div className="product-range-body flex items-center justify-evenly gap-2">
             {
-              [...Array(4)].map((i)=>(
-                <div className=""></div>
+              ["Skin Care", "Home Essential", "Hair Care", "Body Care"].map((i)=>(
+                <div className="bg-white flex flex-col items-center gap-2 h-[18rem]  w-[15rem] p-2 rounded-md overflow-clip hover:shadow-sm border border-gray-400">
+                  <div className="h-[15rem] rounded-md w-full bg-slate-300"></div>
+                  <p className='font-bold text-xl text-center capitalize'>{i}</p>
+                </div>
               ))
             }
           </div>

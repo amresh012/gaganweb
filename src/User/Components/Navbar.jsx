@@ -4,6 +4,7 @@ import Drawer from "./UI/Drawer"
 import { Menu, X} from 'lucide-react';
 import {Link} from "react-router-dom"
 import GalleryDropdown from "./UI/Dropdown"
+import { Divider } from 'antd';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -23,14 +24,18 @@ const Navbar = () => {
              <Link to="/manufacturing">
              <a className="text-gray-600 hover:text-green-600">Manufacturing</a>
              </Link>
-              <a className="text-gray-600 group relative">
-                <li className="list-none">Company</li>
-                <div className="content hidden p-4 space-y-2 group-hover:block list-none bg-white left-0 rounded-md shadow-sm  w-[18rem] absolute">
-                  <li className="list-none">CERTIFICATES</li>
-                  <li className="list-none">DIRECTORS DESK</li>
-                  <li className="list-none">MANUFACTURING UNIT</li>
-                  <li className="list-none">QUALITY CONTROL</li>
-                  <li className="list-none">RESEARCH & DEVELOPMENT</li>
+              <a className="text-gray-600 relative">
+                <li className="list-none group">Company</li>
+                <div className="content opacity-0 group-hover:opacity-100  group-hover:translate-y-0 p-4 space-y-2 translate-y-9 duration-500 group-hover:block list-none bg-white left-0 rounded-md shadow-sm  w-[18rem] absolute">
+                  <li className="list-none hover:bg-gray-100">CERTIFICATES</li>
+                  <Divider/>
+                  <li className="list-none hover:bg-gray-100">DIRECTORS DESK</li>
+                  <Divider/>
+                  <li className="list-none hover:bg-gray-100">MANUFACTURING UNIT</li>
+                  <Divider/>
+                  <li className="list-none hover:bg-gray-100">QUALITY CONTROL</li>
+                  <Divider/>
+                  <li className="list-none hover:bg-gray-100">RESEARCH & DEVELOPMENT</li>
                 </div>
               </a>
               <Link to="/about">
