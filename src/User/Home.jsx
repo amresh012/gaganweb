@@ -3,8 +3,9 @@ import { Menu, X, ChevronRight, Beaker, Building2, Award, Search, Phone} from 'l
 import {Link} from "react-router-dom"
 import Capsule from "../assets/capsules.png"
 import Syrup from "../assets/syrup.png"
-import Whey from "../assets/Whey.png"
+import Whey from "../assets/whey.png"
 import Marquee from "react-fast-marquee"
+import logo from "../assets/logo.png"
 import {C1,
   C2,
   C3,
@@ -39,53 +40,7 @@ const PharmaWebsite = () => {
  ]
   return (
     <div className=" bg-white">
-      {/* Navigation */}
-      {/* <nav className="bg-white shadow-lg">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center p-4">
-             <img src={logo} alt="" className='h-12' />
-              <span className="ml-2 text-xl font-bold text-green-800">GaganPharma</span>
-            </div>
-            
-            <div className="hidden md:flex items-center space-x-8">
-              <a className="text-gray-600 hover:text-green-600">Products</a>
-             <Link to="/manufacturing">
-             <a className="text-gray-600 hover:text-green-600">Manufacturing</a>
-             </Link>
-              <Link to="/about">
-              <a className="text-gray-600 hover:text-green-600">About Us</a>
-              </Link>
-              <a className="text-gray-600 hover:text-green-600">Contact</a>
-              <a className="text-gray-600 hover:text-green-600">Gallery</a>
-              <button className="bg-green-800 text-white px-4 py-2 rounded-md hover:bg-green-700">
-               <Drawer text="Get Quote"/>
-              </button>
-            </div>
-
-            <div className="md:hidden">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <a className="block px-3 py-2 text-gray-600">Products</a>
-              <a className="block px-3 py-2 text-gray-600">Manufacturing</a>
-              <a className="block px-3 py-2 text-gray-600">About Us</a>
-              <a className="block px-3 py-2 text-gray-600">Contact</a>
-              <a className="text-gray-600 hover:text-green-600">Gallery</a>
-
-            </div>
-          </div>
-        )}
-      </nav> */}
-
-      {/* Hero Section */}
+            {/* Hero Section */}
       <div className="bg-gradient-to-r from-green-50 to-green-100">
         <div className="max-w-7xl mx-auto px-4 py-16 sm:py-24">
           <div className="text-center">

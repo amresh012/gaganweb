@@ -6,6 +6,7 @@ const Layout = () => {
    <div>
     <Navbar/>
     <Outlet/>
+    <Footer/>
    </div>
   )
 }

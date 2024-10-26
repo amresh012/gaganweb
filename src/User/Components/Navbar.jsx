@@ -9,10 +9,12 @@ const Navbar = () => {
     <nav className="bg-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
+            <Link to="/">
             <div className="flex items-center p-4">
              <img src={logo} alt="" className='h-12' />
               <span className="ml-2 text-xl font-bold text-green-800">GaganPharma</span>
             </div>
+            </Link>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
