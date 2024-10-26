@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Drawer } from 'antd';
+import QuoteForm from './QuoteForm';
 const App = ({text} ) => {
   const [open, setOpen] = useState(false);
   const showDrawer = () => {
@@ -11,10 +12,8 @@ const App = ({text} ) => {
   return (
     <>
       <button onClick={showDrawer}>{text}</button>
-      <Drawer title="Basic Drawer" onClose={onClose} open={open}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+      <Drawer title="Quotation Form" onClose={onClose} open={open}>
+        <QuoteForm/>
       </Drawer>
     </>
   );

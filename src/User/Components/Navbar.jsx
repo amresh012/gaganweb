@@ -49,7 +49,8 @@ const Navbar = () => {
               <a className="block px-3 py-2 text-gray-600">Manufacturing</a>
               <a className="block px-3 py-2 text-gray-600">About Us</a>
               <a className="block px-3 py-2 text-gray-600">Contact</a>
-              <a className="text-gray-600 hover:text-green-600">Gallery</a>
+              <a className="block px-3 py-2 text-gray-600">Gallery</a>
+              
 
             </div>
           </div>

@@ -14,6 +14,7 @@ import {C1,
 } from "../assets/index"
 import CountUp from 'react-countup';
 import Drawer from "./Components/Drawer"
+import { TypeAnimation } from 'react-type-animation';
 
   const ClientImages =  [C1,C2,C3,C4,C5]
 const PharmaWebsite = () => {
@@ -46,22 +47,32 @@ const PharmaWebsite = () => {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
               Excellence in Pharmaceutical
-              <span className="text-green-800"> Manufacturing</span>
+              {/* <span className="text-green-800"> Manufacturing</span> */}
+              <div>
+              <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Manufacturing',
+        1000, // wait 1s before replacing "Mice" with "Hamsters"
+        'Research and Development',
+        1000,
+        'Contract Manufacturing',
+        1000
+       
+      ]}
+      wrapper="span"
+      speed={60}
+      style={{ fontSize: '3rem', display: 'inline-block', color:"#256534" }}
+      repeat={Infinity}
+    />
+              </div>
             </h1>
             <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
               Leading manufacturer of high-quality pharmaceuticals with state-of-the-art facilities for both proprietary and third-party manufacturing.
             </p>
-            <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-              <div className="rounded-md shadow">
-                <button className="w-full flex items-center justify-center  border border-transparent text-base font-medium rounded-md text-white bg-green-800 hover:bg-green-700 md:py-4 md:text-lg md:px-10">
-                  Explore Products
-                </button>
-              </div>
-              <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-                <button className="w-full flex items-center justify-center border  text-base font-medium rounded-md text-green-600 hover:text-white duration-300  hover:bg-green-800  border-green-800 md:py-4 md:text-lg md:px-2">
-                  Manufacturing Services
-                </button>
-              </div>
+            <div className="mt-12 flex md:flex-row sm:flex-col gap-2 max-w-full justify-center items-center">
+              <button className='font-semibold text-white Capitalize bg-green-800 p-2 rounded-md shadow-md '>Explore Products</button>
+              <button className='font-semibold break-words  p-2 '>Manufacturing Services</button>
             </div>
           </div>
         </div>
