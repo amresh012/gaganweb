@@ -6,6 +6,7 @@ import Manufacturing from "./User/pages/Manufacturing"
 import Aboutus from "./User/pages/Aboutus"
 import Dashboard from "./Admin/Dashboard"
 import ContactUs from "./User/pages/ContactUs"
+import Products from "./User/pages/Products"
 function App() {
 
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/manufacturing' element = {<Manufacturing/>}/>
         <Route path="/about" element={<Aboutus/>}/>
         <Route path="/contactus" element={<ContactUs/>}/>
+        <Route path="/products" element={<Products/>}/>
         </Route>
 
 

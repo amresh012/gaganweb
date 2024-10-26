@@ -20,7 +20,7 @@ const Navbar = () => {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a className="text-gray-600 hover:text-green-600">Products</a>
+              <Link to="/products"><a className="text-gray-600 hover:text-green-600">Products</a></Link>
              <Link to="/manufacturing">
              <a className="text-gray-600 hover:text-green-600">Manufacturing</a>
              </Link>
